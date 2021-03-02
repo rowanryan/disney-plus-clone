@@ -13,7 +13,7 @@ import TVIcon from "../icons/TVIcon";
 
 function Navbar(props) {
 	return (
-		<>
+		<div className="mb-8">
 			<nav className="flex sticky justify-between items-center px-9 py-3">
 				<div className="flex items-center">
 					<img
@@ -59,7 +59,7 @@ function Navbar(props) {
 				<NavLink to="/movies" label="Movies" icon={FilmIcon} />
 				<NavLink to="/series" label="Series" icon={TVIcon} />
 			</div>
-		</>
+		</div>
 	);
 }
 
