@@ -6,7 +6,7 @@ function Layout(props) {
 	return (
 		<>
 			<Navbar />
-			<div className="container mx-auto">{props.children}</div>
+			{props.children}
 		</>
 	);
 }
