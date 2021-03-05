@@ -14,6 +14,8 @@ function Index(props) {
 		return data.slice(0, 8);
 	}, [data]);
 
+	console.log(trending);
+
 	return (
 		<Layout>
 			{trending && (
@@ -21,6 +23,7 @@ function Index(props) {
 					autoPlay
 					infiniteLoop
 					centerMode
+					stopOnHover
 					interval={6000}
 					transitionTime={500}
 					centerSlidePercentage={90}
@@ -28,7 +31,7 @@ function Index(props) {
 				>
 					{trending.map(item => (
 						<div
-							className="bg-gray-800 rounded-lg shadow-2xl"
+							className="relative bg-gray-800 rounded-lg shadow-2xl"
 							style={{
 								paddingTop: "30%",
 								marginLeft: 10,
@@ -37,7 +40,13 @@ function Index(props) {
 								backgroundSize: "cover",
 								backgroundPosition: "center",
 							}}
-						/>
+						>
+							<div className="absolute top-0 left-0 w-full h-full">
+								<h3 className="absolute bottom-10 left-12 text-white text-3xl font-semibold">
+									{item.title || item.name}
+								</h3>
+							</div>
+						</div>
 					))}
 				</Carousel>
 			)}
